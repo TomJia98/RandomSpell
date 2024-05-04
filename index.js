@@ -15,7 +15,7 @@ const randomP = document.getElementById("random");
 const sleepButton = document.getElementById("sleep");
 
 
-let spellslotsOrigin = [4, 4];
+let spellslotsOrigin = [4, 3, 2];
 let spellslots = spellslotsOrigin.slice();
 
 
