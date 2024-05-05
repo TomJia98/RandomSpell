@@ -8,7 +8,7 @@ const ctime = document.getElementById("ctime");
 const duration = document.getElementById("duration");
 const concentration = document.getElementById("concentration");
 const components = document.getElementById("components");
-
+const slotsRemaining = document.getElementById("slotsRemaining");
 
 const castButton = document.getElementById("cast");
 const randomP = document.getElementById("random");
@@ -17,7 +17,13 @@ const sleepButton = document.getElementById("sleep");
 
 let spellslotsOrigin = [4, 3, 2];
 let spellslots = spellslotsOrigin.slice();
+let sum = spellslots.reduce((partialSum, a) => partialSum + a, 0);
+slotsRemaining.textContent = sum;
 
+function updateSpells(){
+  sum = spellslots.reduce((partialSum, a) => partialSum + a, 0);
+  slotsRemaining.textContent = sum
+}
 
 let spellsArr = [
   {
@@ -6124,6 +6130,7 @@ castButton.addEventListener("click", function a(e) {
     console.error(e)
     console.log(availableSpells[rspell])
   }
+  updateSpells()
 });
 
 sleepButton.addEventListener("click", function e(e){
