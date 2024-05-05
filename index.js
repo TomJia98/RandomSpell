@@ -6135,6 +6135,8 @@ castButton.addEventListener("click", function a(e) {
 
 sleepButton.addEventListener("click", function e(e){
   spellslots = spellslotsOrigin.slice();
+  
+  updateSpells()
   console.log("sleeping");
 
   console.log(spellsArr.length);
